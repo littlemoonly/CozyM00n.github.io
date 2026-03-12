@@ -9,19 +9,19 @@
     <meta name="description" content="Lecture8 限定符在函数参数中的作用 int const *p 限定的是 *p，从而向调用者保证这个函数不会修改传进来的数据。 12345678910void func(int const *p) &#123;    *p &#x3D; 3;     &#x2F;&#x2F; error : Read-only variable is not assignable，因为*p的类型是const int，不能给con">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lecture8 限定符、作用域、链接、存储空间">
-<meta property="og:url" content="http://cozym00n.github.io/2026/01/06/C_lecture_8/index.html">
+<meta property="og:url" content="http://littlemoonly.github.io/2026/01/06/C_lecture_8/index.html">
 <meta property="og:site_name" content="Hi there :D">
 <meta property="og:description" content="Lecture8 限定符在函数参数中的作用 int const *p 限定的是 *p，从而向调用者保证这个函数不会修改传进来的数据。 12345678910void func(int const *p) &#123;    *p &#x3D; 3;     &#x2F;&#x2F; error : Read-only variable is not assignable，因为*p的类型是const int，不能给con">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://cozym00n.github.io/2026/C%E8%AF%AD%E8%A8%80%E7%B3%BB%E7%BB%9F%E7%BA%A7%E7%BC%96%E7%A8%8B/note/C_lec_8/image-20241114172038120.png">
-<meta property="og:image" content="http://cozym00n.github.io/2026/01/06/C_lecture_8/For_MD_C_lecture_8/image-20241114173135278.png">
-<meta property="og:image" content="http://cozym00n.github.io/2026/01/06/C_lecture_8/For_MD_C_lecture_8/image-20241114161908488.png">
+<meta property="og:image" content="http://littlemoonly.github.io/2026/C%E8%AF%AD%E8%A8%80%E7%B3%BB%E7%BB%9F%E7%BA%A7%E7%BC%96%E7%A8%8B/note/C_lec_8/image-20241114172038120.png">
+<meta property="og:image" content="http://littlemoonly.github.io/2026/01/06/C_lecture_8/For_MD_C_lecture_8/image-20241114173135278.png">
+<meta property="og:image" content="http://littlemoonly.github.io/2026/01/06/C_lecture_8/For_MD_C_lecture_8/image-20241114161908488.png">
 <meta property="article:published_time" content="2026-01-06T14:52:44.933Z">
 <meta property="article:modified_time" content="2026-01-06T15:19:52.877Z">
 <meta property="article:author" content="little moon">
 <meta property="article:tag" content="C语言系统级编程">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://cozym00n.github.io/2026/C%E8%AF%AD%E8%A8%80%E7%B3%BB%E7%BB%9F%E7%BA%A7%E7%BC%96%E7%A8%8B/note/C_lec_8/image-20241114172038120.png">
+<meta name="twitter:image" content="http://littlemoonly.github.io/2026/C%E8%AF%AD%E8%A8%80%E7%B3%BB%E7%BB%9F%E7%BA%A7%E7%BC%96%E7%A8%8B/note/C_lec_8/image-20241114172038120.png">
     
     
       
@@ -102,17 +102,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://cozym00n.github.io/2026/01/06/C_lecture_8/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://cozym00n.github.io/2026/01/06/C_lecture_8/&text=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://cozym00n.github.io/2026/01/06/C_lecture_8/&title=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://cozym00n.github.io/2026/01/06/C_lecture_8/&is_video=false&description=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Lecture8 限定符、作用域、链接、存储空间&body=Check out this article: http://cozym00n.github.io/2026/01/06/C_lecture_8/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://cozym00n.github.io/2026/01/06/C_lecture_8/&title=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://cozym00n.github.io/2026/01/06/C_lecture_8/&title=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://cozym00n.github.io/2026/01/06/C_lecture_8/&title=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://cozym00n.github.io/2026/01/06/C_lecture_8/&title=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://cozym00n.github.io/2026/01/06/C_lecture_8/&name=Lecture8 限定符、作用域、链接、存储空间&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://cozym00n.github.io/2026/01/06/C_lecture_8/&t=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://littlemoonly.github.io/2026/01/06/C_lecture_8/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://littlemoonly.github.io/2026/01/06/C_lecture_8/&text=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://littlemoonly.github.io/2026/01/06/C_lecture_8/&title=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://littlemoonly.github.io/2026/01/06/C_lecture_8/&is_video=false&description=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Lecture8 限定符、作用域、链接、存储空间&body=Check out this article: http://littlemoonly.github.io/2026/01/06/C_lecture_8/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://littlemoonly.github.io/2026/01/06/C_lecture_8/&title=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://littlemoonly.github.io/2026/01/06/C_lecture_8/&title=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://littlemoonly.github.io/2026/01/06/C_lecture_8/&title=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://littlemoonly.github.io/2026/01/06/C_lecture_8/&title=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://littlemoonly.github.io/2026/01/06/C_lecture_8/&name=Lecture8 限定符、作用域、链接、存储空间&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://littlemoonly.github.io/2026/01/06/C_lecture_8/&t=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -366,17 +366,17 @@ Duration）</span></a></li></ol></li></ol>
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://cozym00n.github.io/2026/01/06/C_lecture_8/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://cozym00n.github.io/2026/01/06/C_lecture_8/&text=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://cozym00n.github.io/2026/01/06/C_lecture_8/&title=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://cozym00n.github.io/2026/01/06/C_lecture_8/&is_video=false&description=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Lecture8 限定符、作用域、链接、存储空间&body=Check out this article: http://cozym00n.github.io/2026/01/06/C_lecture_8/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://cozym00n.github.io/2026/01/06/C_lecture_8/&title=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://cozym00n.github.io/2026/01/06/C_lecture_8/&title=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://cozym00n.github.io/2026/01/06/C_lecture_8/&title=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://cozym00n.github.io/2026/01/06/C_lecture_8/&title=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://cozym00n.github.io/2026/01/06/C_lecture_8/&name=Lecture8 限定符、作用域、链接、存储空间&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://cozym00n.github.io/2026/01/06/C_lecture_8/&t=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://littlemoonly.github.io/2026/01/06/C_lecture_8/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://littlemoonly.github.io/2026/01/06/C_lecture_8/&text=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://littlemoonly.github.io/2026/01/06/C_lecture_8/&title=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://littlemoonly.github.io/2026/01/06/C_lecture_8/&is_video=false&description=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Lecture8 限定符、作用域、链接、存储空间&body=Check out this article: http://littlemoonly.github.io/2026/01/06/C_lecture_8/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://littlemoonly.github.io/2026/01/06/C_lecture_8/&title=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://littlemoonly.github.io/2026/01/06/C_lecture_8/&title=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://littlemoonly.github.io/2026/01/06/C_lecture_8/&title=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://littlemoonly.github.io/2026/01/06/C_lecture_8/&title=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://littlemoonly.github.io/2026/01/06/C_lecture_8/&name=Lecture8 限定符、作用域、链接、存储空间&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://littlemoonly.github.io/2026/01/06/C_lecture_8/&t=Lecture8 限定符、作用域、链接、存储空间"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
